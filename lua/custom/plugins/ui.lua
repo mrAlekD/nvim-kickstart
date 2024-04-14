@@ -29,7 +29,7 @@ local neotree = {
 		event_handlers = {
 			{
 				event = "file_opened",
-				handler = function(file_path)
+				handler = function()
 					-- auto close
 					-- vimc.cmd("Neotree close")
 					-- OR
@@ -67,6 +67,24 @@ local neotree = {
 			"<leader>o",
 			"<CMD>Neotree focus<CR>",
 			{ noremap = true, silent = true, desc = "Focus NeoTree" }
+		)
+	end,
+}
+
+local undotree = {
+	"mbbill/undotree",
+	init = function()
+		vim.keymap.set(
+			"n",
+			"<leader>u",
+			vim.cmd.UndotreeToggle,
+			{ noremap = true, silent = true, desc = "Undotree Toggle" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>uf",
+			vim.cmd.UndotreeFocus,
+			{ noremap = true, silent = true, desc = "Undotree Focus" }
 		)
 	end,
 }
@@ -113,5 +131,6 @@ local toggleterm = {
 return {
 	dressing,
 	neotree,
+	undotree,
 	toggleterm,
 }
