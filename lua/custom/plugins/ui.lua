@@ -12,6 +12,25 @@ local neotree = {
     'MunifTanjim/nui.nvim',
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
+  opts = {
+    default_component_configs = {
+      git_status = {
+        symbols = {
+          -- Change type
+          added = '✚',
+          deleted = '✖',
+          modified = '',
+          renamed = '󰁕',
+          -- Status type
+          untracked = '',
+          ignored = '',
+          unstaged = '󰄱', -- 󰄱
+          staged = '',
+          conflict = '',
+        },
+      },
+    },
+  },
   init = function()
     vim.keymap.set('n', '<leader>ntt', '<CMD>Neotree toggle<CR>', { noremap = true, silent = true, desc = 'NeoTree Toggle' })
     vim.keymap.set('n', '<leader>ntf', '<CMD>Neotree focus<CR>', { noremap = true, silent = true, desc = 'Focus NeoTree' })
