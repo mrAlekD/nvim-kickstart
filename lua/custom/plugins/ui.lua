@@ -19,13 +19,13 @@ local neotree = {
 		window = {
 			mappings = {
 				["e"] = function()
-					vim.api.nvim_exec("Neotree focus filesystem left", true)
+					vim.cmd("Neotree focus filesystem left")
 				end,
 				["b"] = function()
-					vim.api.nvim_exec("Neotree focus buffers left", true)
+					vim.cmd("Neotree focus buffers left")
 				end,
 				["g"] = function()
-					vim.api.nvim_exec("Neotree focus git_status left", true)
+					vim.cmd("Neotree focus git_status left")
 				end,
 			},
 		},
@@ -33,28 +33,8 @@ local neotree = {
 			{
 				event = "file_opened",
 				handler = function()
-					-- auto close
-					-- vimc.cmd("Neotree close")
-					-- OR
 					require("neo-tree.command").execute({ action = "close" })
 				end,
-			},
-		},
-		default_component_configs = {
-			git_status = {
-				symbols = {
-					-- Change type
-					added = "✚",
-					deleted = "✖",
-					modified = "",
-					renamed = "󰁕",
-					-- Status type
-					untracked = "",
-					ignored = "",
-					unstaged = "󰄱", -- 󰄱
-					staged = "",
-					conflict = "",
-				},
 			},
 		},
 	},
