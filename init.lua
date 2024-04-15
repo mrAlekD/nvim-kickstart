@@ -76,7 +76,7 @@ vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
 
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
