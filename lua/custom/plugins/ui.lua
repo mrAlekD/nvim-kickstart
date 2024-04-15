@@ -13,6 +13,9 @@ local neotree = {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	opts = {
+		filesystem = {
+			hijack_netrw_behavior = "open_current",
+		},
 		window = {
 			mappings = {
 				["e"] = function()
@@ -76,7 +79,7 @@ local undotree = {
 	init = function()
 		vim.keymap.set(
 			"n",
-			"<leader>u",
+			"<leader>uu",
 			vim.cmd.UndotreeToggle,
 			{ noremap = true, silent = true, desc = "Undotree Toggle" }
 		)

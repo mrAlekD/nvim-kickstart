@@ -40,7 +40,7 @@ vim.keymap.set({ "n", "v" }, "x", '"_x')
 vim.keymap.set({ "n", "v" }, "<Tab>rh", '"_', { desc = "Empty hole" })
 vim.keymap.set({ "n", "v" }, "<Tab>rr", '"', { desc = "Register" })
 vim.keymap.set({ "n", "v" }, "<Tab>rc", '"+', { desc = "Clipboard register" })
-vim.keymap.set({ "n", "v" }, "<Tab>m", "@", { desc = "Macro" })
+vim.keymap.set({ "n", "v" }, "<Tab>q", "@", { desc = "Macro" })
 
 vim.keymap.set(
 	"n",

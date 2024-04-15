@@ -181,6 +181,7 @@ require("lazy").setup({
 				["<leader>u"] = { name = "[U]ndoTree", _ = "which_key_ignore" },
 				["<Tab>"] = { name = "My menu", _ = "which_key_ignore" },
 				["<Tab>r"] = { name = "[R]egisters", _ = "which_key_ignore" },
+				["<Tab>s"] = { name = "[S]urround", _ = "which_key_ignore" },
 			})
 		end,
 	},
@@ -392,6 +393,12 @@ require("lazy").setup({
 					--  See `:help K` for why this keymap.
 					map("K", vim.lsp.buf.hover, "Hover Documentation")
 					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
+					vim.keymap.set(
+						"i",
+						"<C-k>",
+						vim.lsp.buf.signature_help,
+						{ desc = "Signature help", buffer = event.buf }
+					)
 
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
 					--  For example, in C this would take you to the header.
@@ -674,7 +681,22 @@ require("lazy").setup({
 			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
+			require("mini.surround").setup({
+				mappings = {
+					add = "ys", -- Add surrounding in Normal and Visual modes
+					delete = "ds", -- Delete surrounding
+					find = "<Tab>sf", -- Find surrounding (to the right)
+					find_left = "<Tab>sF", -- Find surrounding (to the left)
+					highlight = "<Tab>sh", -- Highlight surrounding
+					replace = "cs", -- Replace surrounding
+					update_n_lines = "<Tab>sn", -- Update `n_lines`
+
+					suffix_last = "l", -- Suffix to search with "prev" method
+					suffix_next = "n", -- Suffix to search with "next" method
+				},
+			})
+
+			require("mini.tabline").setup()
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
