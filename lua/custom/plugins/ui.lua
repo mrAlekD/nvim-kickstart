@@ -70,23 +70,23 @@ local harpoon = {
 		local harpoon = require("harpoon")
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():add()
-		end)
+		end, { desc = "Add currect buffer", silent = true })
 		vim.keymap.set("n", "<leader>hh", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end)
+		end, { desc = "Open harpoon", silent = true })
 
-		vim.keymap.set("n", "<leader>h1", function()
-			harpoon:list():select(1)
-		end)
-		vim.keymap.set("n", "<leader>h2", function()
-			harpoon:list():select(2)
-		end)
-		vim.keymap.set("n", "<leader>h3", function()
-			harpoon:list():select(3)
-		end)
-		vim.keymap.set("n", "<leader>h4", function()
-			harpoon:list():select(4)
-		end)
+		vim.keymap.set("n", "<leader>hn", function()
+			harpoon:list():next()
+		end, { desc = "Next element", silent = true })
+		vim.keymap.set("n", "<leader>hp", function()
+			harpoon:list():prev()
+		end, { desc = "Previous element", silent = true })
+
+		for idx = 1, 8 do
+			vim.keymap.set("n", "<leader>h" .. idx, function()
+				harpoon:list():select(idx)
+			end, { desc = "Select element" .. idx, silent = true })
+		end
 	end,
 }
 
