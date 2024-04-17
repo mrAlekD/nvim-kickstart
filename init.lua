@@ -382,6 +382,9 @@ require("lazy").setup({
 					--  Similar to document symbols, except searches over your entire project.
 					map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
 
+					-- Diagnostics
+					map("<leader>ld", require("telescope.builtin").diagnostics, "Diagnostics")
+
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
 					map("<leader>lr", vim.lsp.buf.rename, "[R]e[n]ame")
