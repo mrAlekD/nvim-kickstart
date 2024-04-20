@@ -68,16 +68,21 @@ local harpoon = {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
 	event = "VeryLazy",
+	cmd = { "Harpoon" },
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = true,
 	init = function()
 		local harpoon = require("harpoon")
+		local hopen = function()
+			harpoon.ui:toggle_quick_menu(harpoon:list())
+		end
+
+		vim.api.nvim_create_user_command("Harpoon", hopen, {})
+		vim.keymap.set("n", "<leader>hh", hopen, { desc = "Open harpoon", silent = true })
+
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():add()
 		end, { desc = "Add currect buffer", silent = true })
-		vim.keymap.set("n", "<leader>hh", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end, { desc = "Open harpoon", silent = true })
 
 		vim.keymap.set("n", "<leader>hn", function()
 			harpoon:list():next()
