@@ -1,5 +1,6 @@
 local dressing = {
 	"stevearc/dressing.nvim",
+	event = "VeryLazy",
 	opts = {},
 }
 
@@ -26,6 +27,8 @@ local toggleterm = {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	config = true,
+	event = "VimEnter",
+	cmd = { "ToggleTerm", "ToggleTermToggleAll" },
 	init = function()
 		vim.keymap.set(
 			"n",
@@ -64,6 +67,7 @@ local toggleterm = {
 local harpoon = {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
+	event = "VeryLazy",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = true,
 	init = function()
@@ -92,7 +96,7 @@ local harpoon = {
 
 local whichkey = { -- Useful plugin to show you pending keybinds.
 	"folke/which-key.nvim",
-	event = "VimEnter", -- Sets the loading event to 'VimEnter'
+	event = "VeryLazy", -- Sets the loading event to 'VimEnter'
 	config = function() -- This is the function that runs, AFTER loading
 		require("which-key").setup()
 
