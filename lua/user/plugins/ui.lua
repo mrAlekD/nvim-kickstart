@@ -90,9 +90,32 @@ local harpoon = {
 	end,
 }
 
+local whichkey = { -- Useful plugin to show you pending keybinds.
+	"folke/which-key.nvim",
+	event = "VimEnter", -- Sets the loading event to 'VimEnter'
+	config = function() -- This is the function that runs, AFTER loading
+		require("which-key").setup()
+
+		-- Document existing key chains
+		require("which-key").register({
+			["<leader>d"] = { name = "[D]ebug", _ = "which_key_ignore" },
+			["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
+			["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
+			["<leader>l"] = { name = "[L]sp", _ = "which_key_ignore" },
+			["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
+			["<leader>t"] = { name = "[T]erminal", _ = "which_key_ignore" },
+			["<leader>u"] = { name = "[U]ndoTree", _ = "which_key_ignore" },
+			["<Tab>"] = { name = "My menu", _ = "which_key_ignore" },
+			["<Tab>r"] = { name = "[R]egisters", _ = "which_key_ignore" },
+			["<Tab>s"] = { name = "[S]urround", _ = "which_key_ignore" },
+		})
+	end,
+}
+
 return {
 	dressing,
 	undotree,
 	toggleterm,
 	harpoon,
+	whichkey,
 }
