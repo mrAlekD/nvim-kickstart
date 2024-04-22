@@ -1,6 +1,6 @@
 local dressing = {
 	"stevearc/dressing.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy", -- breaks ui for some reason
 	opts = {},
 }
 
