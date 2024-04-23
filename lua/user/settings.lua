@@ -77,3 +77,8 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 
 vim.opt.cmdheight = 1
+
+-- fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
