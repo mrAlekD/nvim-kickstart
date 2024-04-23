@@ -42,6 +42,9 @@ vim.keymap.set({ "n", "v" }, "<Tab>rr", '"', { desc = "Register" })
 vim.keymap.set({ "n", "v" }, "<Tab>rc", '"+', { desc = "Clipboard register" })
 vim.keymap.set({ "n", "v" }, "<Tab>q", "@", { desc = "Macro" })
 
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
+
 vim.keymap.set(
 	"n",
 	"[<Space>",
