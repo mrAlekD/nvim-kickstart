@@ -42,8 +42,12 @@ vim.keymap.set({ "n", "v" }, "<Tab>rr", '"', { desc = "Register" })
 vim.keymap.set({ "n", "v" }, "<Tab>rc", '"+', { desc = "Clipboard register" })
 vim.keymap.set({ "n", "v" }, "<Tab>q", "@", { desc = "Macro" })
 
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "J", function()
+	return ":'<,'>m '>+" .. vim.v.count1 .. "<cr>gv=gv"
+end, { desc = "Move text down", expr = true })
+vim.keymap.set("v", "K", function()
+	return ":'<,'>m '<-" .. (vim.v.count1 + 1) .. "<cr>gv=gv"
+end, { desc = "Move text up", expr = true })
 
 vim.keymap.set(
 	"n",
