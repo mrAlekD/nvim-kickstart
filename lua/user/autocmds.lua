@@ -5,7 +5,6 @@ local function augroup(name, opts)
 end
 
 -- Highlight when yanking (copying) text
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = augroup("highlight-yank"),
@@ -14,8 +13,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- The following autocmds are yanked from LazyVim, huge thank you to their team
 -- go to last loc when opening a buffer
--- yanked from LazyVim, thank you
 vim.api.nvim_create_autocmd("BufReadPost", {
 	group = augroup("last-loc"),
 	callback = function(event)
