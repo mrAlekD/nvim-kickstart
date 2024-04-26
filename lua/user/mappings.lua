@@ -41,6 +41,7 @@ vim.keymap.set({ "n", "v" }, "<Tab>rh", '"_', { desc = "Empty hole" })
 vim.keymap.set({ "n", "v" }, "<Tab>rr", '"', { desc = "Register" })
 vim.keymap.set({ "n", "v" }, "<Tab>rc", '"+', { desc = "Clipboard register" })
 vim.keymap.set({ "n", "v" }, "<Tab>q", "@", { desc = "Macro" })
+vim.keymap.set({ "n", "v" }, "<Tab><Tab>", "<Tab>", { desc = "Tab", noremap = true })
 
 vim.keymap.set("v", "J", function()
 	return ":'<,'>m '>+" .. vim.v.count1 .. "<cr>gv=gv"
@@ -63,6 +64,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
+vim.keymap.set("n", "<M-o>", "<C-I>", { noremap = true })
 vim.keymap.set("n", "]b", "<cmd>bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "[b", "<cmd>bp<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>c", "<cmd>bd<cr>", { desc = "Close buffer" })
