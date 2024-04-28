@@ -32,6 +32,10 @@ return {
 
 			require("mini.tabline").setup()
 
+			local minifiles = require("mini.files")
+			minifiles.setup()
+			vim.keymap.set("n", "<leader>fm", minifiles.open, { desc = "Open MiniFiles" })
+
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
 			--  and try some other statusline plugin
