@@ -32,8 +32,13 @@ return {
 
 			require("mini.tabline").setup()
 
+			-- File explorer
 			local minifiles = require("mini.files")
-			minifiles.setup()
+			minifiles.setup({
+				options = {
+					use_as_default_explorer = false,
+				},
+			})
 			vim.keymap.set("n", "<leader>fm", minifiles.open, { desc = "Open MiniFiles" })
 
 			-- Simple and easy statusline.
