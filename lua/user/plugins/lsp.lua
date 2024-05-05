@@ -356,6 +356,7 @@ return {
 			indent = { enable = true, disable = { "ruby" } },
 			textobjects = {
 				select = {
+					disable = { "zig" }, -- cases massive slowdown on zig for some reason
 					enable = true,
 					lookahead = true,
 					keymaps = {
