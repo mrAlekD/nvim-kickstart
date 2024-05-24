@@ -21,7 +21,7 @@ return {
 		vim.keymap.set("i", "<C-a>t", function()
 			vim.fn["codeium#Complete"]()
 		end, { desc = "Codeium Trigger", silent = true })
-		vim.keymap.set("n", "<Leader>;", function()
+		vim.keymap.set("n", "<Leader>;c", function()
 			if vim.g.codeium_enabled == true then
 				vim.cmd("CodeiumDisable")
 			else

@@ -112,6 +112,7 @@ local whichkey = { -- Useful plugin to show you pending keybinds.
 			["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
 			["<leader>t"] = { name = "[T]erminal", _ = "which_key_ignore" },
 			["<leader>u"] = { name = "[U]ndoTree", _ = "which_key_ignore" },
+			["<leader>;"] = { name = "Toggles", _ = "which_key_ignore" },
 			["<Tab>"] = { name = "My menu", _ = "which_key_ignore" },
 			["<Tab>r"] = { name = "[R]egisters", _ = "which_key_ignore" },
 			["<Tab>s"] = { name = "[S]urround", _ = "which_key_ignore" },
