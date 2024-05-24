@@ -68,5 +68,8 @@ vim.keymap.set("n", "<M-o>", "<C-I>", { noremap = true })
 vim.keymap.set("n", "]b", "<cmd>bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "[b", "<cmd>bp<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>c", "<cmd>bd<cr>", { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>;s", function()
+	vim.opt.scrolloff = 999 - vim.o.scrolloff
+end, { desc = "Toggle scrolloff" })
 
 vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature help" })
