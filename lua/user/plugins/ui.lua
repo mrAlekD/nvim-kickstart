@@ -104,18 +104,33 @@ local whichkey = { -- Useful plugin to show you pending keybinds.
 	event = "VeryLazy", -- Sets the loading event to 'VimEnter'
 	config = true,
 	init = function()
-		require("which-key").register({
-			["<leader>d"] = { name = "[D]ebug", _ = "which_key_ignore" },
-			["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
-			["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
-			["<leader>l"] = { name = "[L]sp", _ = "which_key_ignore" },
-			["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
-			["<leader>t"] = { name = "[T]erminal", _ = "which_key_ignore" },
-			["<leader>u"] = { name = "[U]ndoTree", _ = "which_key_ignore" },
-			["<leader>;"] = { name = "Toggles", _ = "which_key_ignore" },
-			["<Tab>"] = { name = "My menu", _ = "which_key_ignore" },
-			["<Tab>r"] = { name = "[R]egisters", _ = "which_key_ignore" },
-			["<Tab>s"] = { name = "[S]urround", _ = "which_key_ignore" },
+		-- require("which-key").register({
+		-- 	["<leader>d"] = { name = "[D]ebug", _ = "which_key_ignore" },
+		-- 	["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
+		-- 	["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
+		-- 	["<leader>l"] = { name = "[L]sp", _ = "which_key_ignore" },
+		-- 	["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
+		-- 	["<leader>t"] = { name = "[T]erminal", _ = "which_key_ignore" },
+		-- 	["<leader>u"] = { name = "[U]ndoTree", _ = "which_key_ignore" },
+		-- 	["<leader>;"] = { name = "Toggles", _ = "which_key_ignore" },
+		-- 	["<Tab>"] = { name = "My menu", _ = "which_key_ignore" },
+		-- 	["<Tab>r"] = { name = "[R]egisters", _ = "which_key_ignore" },
+		-- 	["<Tab>s"] = { name = "[S]urround", _ = "which_key_ignore" },
+		-- })
+		--
+		local wk = require("which-key")
+		wk.add({
+			{ "<leader>d", group = "[D]ebug" },
+			{ "<leader>g", group = "[G]it" },
+			{ "<leader>h", group = "[H]arpoon" },
+			{ "<leader>l", group = "[L]sp" },
+			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>t", group = "[T]erminal" },
+			{ "<leader>u", group = "[U]ndoTree" },
+			{ "<leader>;", group = "Toggles" },
+			{ "<Tab>", group = "My menu" },
+			{ "<Tab>r", group = "[R]egisters" },
+			{ "<Tab>s", group = "[S]urround" },
 		})
 	end,
 }
